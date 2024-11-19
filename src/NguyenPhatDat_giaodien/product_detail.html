@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../output.css" rel="stylesheet">
+    <title>Chi tiết sản phẩm</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="flex items-center">
+                <div class="text-2xl font-bold text-blue-600">Logo</div>
+                <nav class="ml-8 space-x-4">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Trang chủ</a>
+                    <a href="product.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Cửa hàng</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-300">Về chúng tôi</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Liên hệ</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Search..." class="border rounded-full px-2 py-1 focus:outline-none">
+                <button class="text-gray-700 hover:text-blue-500">Đăng nhập</button>
+                <button class="relative text-gray-700 hover:text-blue-500">
+                    Giỏ hàng
+                    <span class="absolute -top-1 -right-2 bg-red-500 text-white text-xs rounded-full px-2">2</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Product Info -->
+    <section class="my-8">
+        <div class="container mx-auto flex flex-col md:flex-row items-start px-4">
+            <!-- Product Image -->
+            <div class="w-full md:w-1/2 bg-white p-6 rounded-lg shadow-lg">
+                <img src="path_to_product_image.jpg" alt="Product Image" class="rounded-lg object-cover">
+            </div>
+            <!-- Product Details -->
+            <div class="w-full md:w-1/2 md:ml-8 mt-6 md:mt-0">
+                <h2 class="text-3xl font-bold mb-4">Tên Sản Phẩm</h2>
+                <p class="text-2xl text-blue-600 font-semibold mb-4">Giá: 1,000,000₫</p>
+                <p class="text-gray-600 mb-6">Mô tả ngắn gọn về sản phẩm. Giới thiệu sơ qua về các tính năng nổi bật và các thông tin cần thiết.</p>
+                <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail -->
+    <section class="my-8">
+        <div class="container mx-auto bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-bold mb-4">Chi tiết sản phẩm</h3>
+            <p class="text-gray-700">Đây là phần chi tiết của sản phẩm. Bao gồm thông tin đầy đủ về sản phẩm như kích thước, chất liệu, bảo hành, và hướng dẫn sử dụng.</p>
+        </div>
+    </section>
+
+    <!-- Product Same Category -->
+    <section class="my-12">
+        <div class="container mx-auto">
+            <h3 class="text-2xl font-bold text-center text-blue-600 mb-6">Sản phẩm cùng danh mục</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Product Card -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 text-center">
+                    <img src="path_to_image.jpg" alt="Product 1" class="h-40 w-full object-cover rounded-md mb-4">
+                    <h4 class="font-semibold text-lg mb-2">Sản phẩm 1</h4>
+                    <p class="text-blue-600 font-bold mb-2">500,000₫</p>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Xem chi tiết</button>
+                </div>
+                <!-- Repeat Product Card for each item -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 text-center">
+                    <img src="path_to_image.jpg" alt="Product 2" class="h-40 w-full object-cover rounded-md mb-4">
+                    <h4 class="font-semibold text-lg mb-2">Sản phẩm 2</h4>
+                    <p class="text-blue-600 font-bold mb-2">600,000₫</p>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Xem chi tiết</button>
+                </div>
+                <!-- Add more product cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-6">
+        <div class="container mx-auto">
+            <div class="flex justify-between mb-4">
+                <div>
+                    <h3 class="text-lg font-bold">About Us</h3>
+                    <p class="text-gray-400">Thông tin về công ty, dịch vụ, chính sách...</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">Contact</h3>
+                    <p class="text-gray-400">Email: info@example.com</p>
+                    <p class="text-gray-400">Phone: +123 456 789</p>
+                </div>
+            </div>
+            <div class="text-center text-gray-400">
+                © 2024 Your Company. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

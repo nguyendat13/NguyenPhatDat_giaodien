@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm</title>
+    <link href="../output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+   <!-- Header -->
+   <header class="bg-white py-4">
+    <div class="container mx-auto flex justify-between items-center px-4">
+        <div class=" items-center">
+            <div class="text-lime-500 text-4xl font-bold relative"style="left:30px;top:30px;">Fruitables</div>
+            <nav class="relative ml-8 m-6 space-x-4"style="left:350px; bottom:20px">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Trang chủ</a>
+                <a href="product.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Cửa hàng</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-300">Về chúng tôi</a>
+                <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Liên hệ</a>
+            </nav>
+        </div>
+        <div class="flex items-center space-x-4">
+            <input type="text" placeholder="Search..." class="border border-gray-300 rounded-full px-4 py-1 focus:outline-none focus:border-blue-500 transition duration-300">
+            <button class="text-gray-700 hover:text-blue-500 transition duration-300">Đăng nhập</button>
+            <button class="relative text-gray-700 hover:text-blue-500 transition duration-300">
+                Giỏ hàng
+                <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2">2</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+   <!-- Product Section -->
+   <section class="container mx-auto p-6">
+       <div class="flex items-center justify-between mb-4">
+           <!-- Bộ lọc sản phẩm -->
+           <div class="flex space-x-4">
+               <label class="flex items-center space-x-2">
+                   <span>Category:</span>
+                   <select class="border border-gray-300 rounded p-2">
+                       <option value="all">All</option>
+                       <option value="electronics">Electronics</option>
+                       <option value="fashion">Fashion</option>
+                   </select>
+               </label>
+
+               <!-- Sắp xếp sản phẩm -->
+               <label class="flex items-center space-x-2">
+                   <span>Sort by:</span>
+                   <select class="border border-gray-300 rounded p-2">
+                       <option value="price-asc">Price (Low to High)</option>
+                       <option value="price-desc">Price (High to Low)</option>
+                       <option value="name-asc">Name (A-Z)</option>
+                   </select>
+               </label>
+           </div>
+
+           <!-- Kiểu hiển thị (List / Grid) -->
+           <div class="space-x-2">
+               <button onclick="setView('list')" class="bg-gray-200 p-2 rounded">List View</button>
+               <button onclick="setView('grid')" class="bg-gray-200 p-2 rounded">Grid View</button>
+           </div>
+       </div>
+
+       <!-- Danh sách sản phẩm -->
+       <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+           <div class="product-card bg-white rounded shadow p-4 flex flex-col items-center">
+               <img src="product1.jpg" alt="Product 1" class="w-32 h-32 object-cover mb-4">
+               <h3 class="text-lg font-semibold">Product Name 1</h3>
+               <p class="text-gray-500 mb-4">Price: $10</p>
+               <button class="bg-blue-500 text-white px-4 py-2 rounded">Add to Cart</button>
+           </div>
+
+           <div class="product-card bg-white rounded shadow p-4 flex flex-col items-center">
+               <img src="product2.jpg" alt="Product 2" class="w-32 h-32 object-cover mb-4">
+               <h3 class="text-lg font-semibold">Product Name 2</h3>
+               <p class="text-gray-500 mb-4">Price: $20</p>
+               <button class="bg-blue-500 text-white px-4 py-2 rounded">Add to Cart</button>
+           </div>
+           <!-- Thêm các product card khác -->
+       </div>
+   </section>
+
+   <!-- Footer -->
+   <footer class="bg-gray-900 text-white py-10">
+       <div class="container mx-auto">
+           <div class="flex flex-col md:flex-row justify-between mb-8">
+               <div class="mb-6 md:mb-0">
+                   <h3 class="text-xl font-bold mb-2">About Us</h3>
+                   <p class="text-gray-400">Thông tin về công ty, dịch vụ, chính sách...</p>
+               </div>
+               <div>
+                   <h3 class="text-xl font-bold mb-2">Contact</h3>
+                   <p class="text-gray-400">Email: info@example.com</p>
+                   <p class="text-gray-400">Phone: +123 456 789</p>
+               </div>
+           </div>
+           <div class="text-center text-gray-400">
+               © 2024 Your Company. All rights reserved.
+           </div>
+       </div>
+   </footer>
+
+ 
+
+</body>
+</html>

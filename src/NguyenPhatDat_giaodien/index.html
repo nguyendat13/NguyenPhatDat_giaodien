@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../src/output.css" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <title>Trang chủ</title>
+
+</head>
+
+<body class="">
+    <!-- Header -->
+     
+    <header class="bg-white py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class=" items-center">
+                <div class="text-lime-500 text-4xl font-bold relative"style="left:30px;top:30px;">Fruitables</div>
+                <nav class="relative ml-8 m-6 space-x-4"style="left:350px; bottom:20px">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Trang chủ</a>
+                    <a href="product.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Cửa hàng</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-300">Về chúng tôi</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Liên hệ</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Search..." class="border border-gray-300 rounded-full px-4 py-1 focus:outline-none focus:border-blue-500 transition duration-300">
+                <button class="text-gray-700 hover:text-blue-500 transition duration-300">Đăng nhập</button>
+                <button class="relative text-gray-700 hover:text-blue-500 transition duration-300">
+                    Giỏ hàng
+                    <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2">2</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Slider -->
+    <div class="container mx-auto  ">
+        <!-- Hình ảnh làm nền -->
+        <div class="relative">
+            <img class="w-full h-96 object-cover rounded-lg shadow-lg" src="../img/hero-img.jpg" alt="Hero Image">
+            
+            <!-- Phần văn bản nằm trên ảnh -->
+            <div class="absolute " style="top:100px;left: 100px;">
+                <p class="text-yellow-400 font-bold " style="font-size: 25px;margin-bottom:25px;">100% Organic Foods</p>
+                <p class=" text-4xl font-bold text-lime-500" style="font-size: 50px;">Organic Veggies & <br> Fruits Foods</p>
+            </div>
+        </div>
+
+          <!-- Slider nằm bên phải -->
+    <div class="w-1/2 relative" style="bottom:300px;left:600px;">
+      <!-- Carousel Indicators -->
+      <div class="absolute top-0 left-0 right-0 flex justify-center space-x-2 z-10">
+        <button class="w-3 h-3 bg-white rounded-full" onclick="showSlide(0)"></button>
+        <button class="w-3 h-3 bg-white rounded-full" onclick="showSlide(1)"></button>
+      </div>
+
+      <!-- Carousel Slides -->
+      <div class="overflow-hidden relative">
+        <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+          <!-- Slide 1 -->
+          <div class="carousel-item w-full">
+            <img src="../img/hero-img-1.png" class="w-full h-auto" alt="Slide 1">
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-item w-full">
+            <img src="../img/hero-img-2.jpg" class="w-full h-auto" alt="Slide 2">
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <button onclick="prevSlide()" class="absolute top-1/2 left-4 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full">
+        &#10094;
+      </button>
+      <button onclick="nextSlide()" class="absolute top-1/2 right-4 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full">
+        &#10095;
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      const carousel = document.getElementById('carousel');
+      const totalSlides = document.querySelectorAll('.carousel-item').length;
+      currentSlide = (index + totalSlides) % totalSlides; // Wrap around to avoid out-of-bound errors
+      carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + document.querySelectorAll('.carousel-item').length) % document.querySelectorAll('.carousel-item').length;
+      showSlide(currentSlide);
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % document.querySelectorAll('.carousel-item').length;
+      showSlide(currentSlide);
+    }
+
+    // Optionally auto-change slides every 5 seconds
+    setInterval(() => {
+      nextSlide();
+    }, 5000);
+  </script>
+    </div>
+   
+     
+    <div class="container mx-auto relative"style="bottom:100px">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <!-- Free Shipping -->
+          <div class="flex flex-col items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18a2 2 0 012 2v14a2 2 0 01-2 2H3a2 2 0 01-2-2V5a2 2 0 012-2z" />
+            </svg>
+            <p class="text-xl font-semibold mt-4">Free Shipping</p>
+            <p class="text-sm text-gray-500">Free on order over $300</p>
+          </div>
+          <!-- Security Payment -->
+          <div class="flex flex-col items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9l3 3 7-7" />
+            </svg>
+            <p class="text-xl font-semibold mt-4">Security Payment</p>
+            <p class="text-sm text-gray-500">100% security payment</p>
+          </div>
+          <!-- 30 Day Return -->
+          <div class="flex flex-col items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17l3-3-3-3" />
+            </svg>
+            <p class="text-xl font-semibold mt-4">30 Day Return</p>
+            <p class="text-sm text-gray-500">30 day money guarantee</p>
+          </div>
+          <!-- 24/7 Support -->
+          <div class="flex flex-col items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v18m9-9H3" />
+            </svg>
+            <p class="text-xl font-semibold mt-4">24/7 Support</p>
+            <p class="text-sm text-gray-500">Support every time</p>
+          </div>
+        </div>
+      </div>
+      
+  <!-- Product Categories -->
+    <section class="py-12 my-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:justify-between items-center mb-8">
+                <h1 class="text-4xl font-bold text-gray-500 relative" style="left:40px;">Our Organic <br> Products</h1>
+                <ul class="flex space-x-4 relative " style="right:40px;">
+                    <li>
+                        <a href="#tab-1" class="py-2 px-6 bg-gray-200 rounded-full text-gray-700 hover:text-blue-600 hover:bg-gray-300 transition">All Products</a>
+                    </li>
+                    <li>
+                        <a href="#tab-2" class="py-2 px-6 bg-gray-200 rounded-full text-gray-700 hover:text-blue-600 hover:bg-gray-300 transition">Vegetables</a>
+                    </li>
+                    <li>
+                        <a href="#tab-3" class="py-2 px-6 bg-gray-200 rounded-full text-gray-700 hover:text-blue-600 hover:bg-gray-300 transition">Fruits</a>
+                    </li>
+                    <li>
+                        <a href="#tab-4" class="py-2 px-6 bg-gray-200 rounded-full text-gray-700 hover:text-blue-600 hover:bg-gray-300 transition">Bread</a>
+                    </li>
+                    <li>
+                        <a href="#tab-5" class="py-2 px-6 bg-gray-200 rounded-full text-gray-700 hover:text-blue-600 hover:bg-gray-300 transition">Meat</a>
+                    </li>
+                </ul>
+            </div>
+                <div class="container mx-auto relative" style="left:5px;">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                            <div class="relative">
+                                <img src="../img/fruite-item-1.jpg" alt="Banana" class="rounded-t-lg w-full h-48 object-cover">
+                                <div class="absolute top-2 left-2 bg-yellow-400 text-white text-xs px-3 py-1 rounded">
+                                    Fruits
+                                </div>
+                            </div>
+                            <div class="p-4 border-t border-yellow-400">
+                                <h4 class="text-lg font-semibold mb-2">Banana</h4>
+                                <p class="text-gray-500 text-sm mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                <div class="flex justify-between items-center">
+                                    <p class="text-gray-800 font-bold">$4.99 / kg</p>
+                                    <button class="flex items-center bg-green-100 text-green-700 text-sm font-semibold px-4 py-1 rounded-full border border-green-700 hover:bg-green-200 transition">
+                                        <i class="fa fa-shopping-bag mr-1"></i> Add to cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                            <div class="relative">
+                                <img src="../img/fruite-item-1.jpg" alt="Banana" class="rounded-t-lg w-full h-48 object-cover">
+                                <div class="absolute top-2 left-2 bg-yellow-400 text-white text-xs px-3 py-1 rounded">
+                                    Fruits
+                                </div>
+                            </div>
+                            <div class="p-4 border-t border-yellow-400">
+                                <h4 class="text-lg font-semibold mb-2">Banana</h4>
+                                <p class="text-gray-500 text-sm mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                <div class="flex justify-between items-center">
+                                    <p class="text-gray-800 font-bold">$4.99 / kg</p>
+                                    <button class="flex items-center bg-green-100 text-green-700 text-sm font-semibold px-4 py-1 rounded-full border border-green-700 hover:bg-green-200 transition">
+                                        <i class="fa fa-shopping-bag mr-1"></i> Add to cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                            <div class="relative">
+                                <img src="../img/fruite-item-1.jpg" alt="Banana" class="rounded-t-lg w-full h-48 object-cover">
+                                <div class="absolute top-2 left-2 bg-yellow-400 text-white text-xs px-3 py-1 rounded">
+                                    Fruits
+                                </div>
+                            </div>
+                            <div class="p-4 border-t border-yellow-400">
+                                <h4 class="text-lg font-semibold mb-2">Banana</h4>
+                                <p class="text-gray-500 text-sm mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                <div class="flex justify-between items-center">
+                                    <p class="text-gray-800 font-bold">$4.99 / kg</p>
+                                    <button class="flex items-center bg-green-100 text-green-700 text-sm font-semibold px-4 py-1 rounded-full border border-green-700 hover:bg-green-200 transition">
+                                        <i class="fa fa-shopping-bag mr-1"></i> Add to cart
+                                    </button>
+                                </div>
+                            </div>
+                         </div>
+                       
+                         <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                            <div class="relative">
+                                <img src="../img/fruite-item-1.jpg" alt="Banana" class="rounded-t-lg w-full h-48 object-cover">
+                                <div class="absolute top-2 left-2 bg-yellow-400 text-white text-xs px-3 py-1 rounded">
+                                    Fruits
+                                </div>
+                            </div>
+                            <div class="p-4 border-t border-yellow-400">
+                                <h4 class="text-lg font-semibold mb-2">Banana</h4>
+                                <p class="text-gray-500 text-sm mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                <div class="flex justify-between items-center">
+                                    <p class="text-gray-800 font-bold">$4.99 / kg</p>
+                                    <button class="flex items-center bg-green-100 text-green-700 text-sm font-semibold px-4 py-1 rounded-full border border-green-700 hover:bg-green-200 transition">
+                                        <i class="fa fa-shopping-bag mr-1"></i> Add to cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                          
+                </div> 
+                           
+        </div>
+    </section>
+    
+
+    <!-- New Products -->
+    <section class="my-12">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-blue-600 mb-8">Sản phẩm mới</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center font-semibold cursor-pointer">
+                    New Product 1
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center font-semibold cursor-pointer">
+                    New Product 2
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center font-semibold cursor-pointer">
+                    New Product 3
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center font-semibold cursor-pointer">
+                    New Product 4
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    
+    <!-- Sale Products -->
+    <section class="my-12">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-blue-600 mb-8">Sản phẩm giảm giá</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center font-semibold cursor-pointer">
+                    Sale Product 1
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center font-semibold cursor-pointer">
+                    Sale Product 2
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center font-semibold cursor-pointer">
+                    Sale Product 3
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center font-semibold cursor-pointer">
+                    Sale Product 4
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Posts -->
+    <section class="my-12">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-blue-600 mb-8">Bài viết mới nhất</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="text-lg font-semibold mb-2">Post 1</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="text-lg font-semibold mb-2">Post 2</h3>
+                    <p class="text-gray-600">Curabitur euismod, turpis a bibendum bibendum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between mb-8">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2">Giới thiệu</h3>
+                    <p class="text-gray-400">Thông tin về công ty, dịch vụ, chính sách...</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Liên hệ</h3>
+                    <p class="text-gray-400">Email: info@example.com</p>
+                    <p class="text-gray-400">Phone: +123 456 789</p>
+                </div>
+            </div>
+            <div class="text-center text-gray-400">
+                © 2024 Công ty của bạn. Bảo lưu mọi quyền.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
