@@ -837,7 +837,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
 }
-
+.bg-orange-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity, 1));
+}
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -1140,11 +1143,26 @@ video {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+.hover\:text-lime-500:hover{
+  --tw-bg-opacity: 1;
+  color: rgb(132 204 22 / var(--tw-text-opacity, 1));
 
+}
+  
+.hover\:bg-orange-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 115 22/ var(--tw-bg-opacity, 1));
+}
 .text-lime-500 {
   color: #84cc16;
 }
 /* Lớp text-yellow-400 trong CSS sẽ trông như thế này: */
 .text-yellow-400 {
   color: #fbbf24;
+}
+.text-slate-100 {
+  color: #f1f5f9;
+}
+.bg-orange-500{
+  color:#F97316;
 }
