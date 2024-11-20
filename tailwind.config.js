@@ -1,8 +1,6 @@
-// /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{html,js,jsx,ts,tsx}",],
+  mode: 'jit',
+  content: ["./src/**/*.{html,js}", "./*.html"], // Bao gồm file HTML trong thư mục gốc (nếu có)
   theme: {
     extend: {},
   },

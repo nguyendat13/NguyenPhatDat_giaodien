@@ -4,29 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" 
+    integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <title>Chi tiết sản phẩm</title>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
     <!-- Header -->
-    <header class="bg-white shadow-md py-4">
-        <div class="container mx-auto flex justify-between items-center px-4">
-            <div class="flex items-center">
-                <div class="text-2xl font-bold text-blue-600">Logo</div>
-                <nav class="ml-8 space-x-4">
-                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Trang chủ</a>
-                    <a href="product.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Cửa hàng</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-300">Về chúng tôi</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Liên hệ</a>
+    <header class="bg-white sticky top-0 z-50 ">
+        <div class="flex justify-between items-center px-4 shadow-lg w-full">
+            <div class="items-center">
+                <a href="index.html" class="text-lime-500 text-4xl font-bold relative"style="left:100px;top:30px;">Fruitables</a>
+                <nav class="relative ml-8 m-6 space-x-4 "style="left:350px; bottom:20px;padding-left:50px;">
+                    <a href="index.html" class="text-gray-700 hover:text-lime-500 transition duration-300">Trang chủ</a>
+                    <a href="product.html" class="text-gray-700 hover:text-lime-500 transition duration-300">Cửa hàng</a>
+                    <a href="#" class="text-gray-700 hover:text-lime-500 transition duration-300">Về chúng tôi</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-lime-500 transition duration-300">Liên hệ</a>
                 </nav>
             </div>
-            <div class="flex items-center space-x-4">
-                <input type="text" placeholder="Search..." class="border rounded-full px-2 py-1 focus:outline-none">
-                <button class="text-gray-700 hover:text-blue-500">Đăng nhập</button>
-                <button class="relative text-gray-700 hover:text-blue-500">
-                    Giỏ hàng
-                    <span class="absolute -top-1 -right-2 bg-red-500 text-white text-xs rounded-full px-2">2</span>
-                </button>
+            <div class="flex items-center space-x-4 relative"style="right:80px">
+                <!-- <input type="text" placeholder="Search..." class="border border-gray-300 rounded-full px-4 py-1 focus:outline-none focus:border-blue-500 transition duration-300"> -->
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-regular fa-user"></i>
+                <i class="fa-regular fa-heart"></i>
+                 <button>   <i class="fa-solid fa-light fa-cart-shopping"></i>
+                    <span class="absolute  bg-red-500 text-white text-xs rounded-full px-2"style="left:105px;bottom:15px">2</span></button>
+                    <i class="fa-regular fa-bell"></i>
             </div>
         </div>
     </header>
@@ -35,15 +40,17 @@
         <div class="container mx-auto flex flex-col md:flex-row items-start px-4">
             <!-- Product Image -->
             <div class="w-full md:w-1/2 bg-white p-6 rounded-lg shadow-lg">
-                <img src="path_to_product_image.jpg" alt="Product Image" class="rounded-lg object-cover">
+                <img src="./img/fruite-item-1.jpg" alt="Product Image" class="rounded-lg object-cover">
             </div>
             <!-- Product Details -->
             <div class="w-full md:w-1/2 md:ml-8 mt-6 md:mt-0">
-                <h2 class="text-3xl font-bold mb-4">Tên Sản Phẩm</h2>
-                <p class="text-2xl text-blue-600 font-semibold mb-4">Giá: 1,000,000₫</p>
+                <h2 class="text-3xl text-gray-600 font-bold mb-4">Tên Sản Phẩm</h2>
+                <p class="text-2xl font-semibold mb-4">Giá: 1,000,000₫</p>
                 <p class="text-gray-600 mb-6">Mô tả ngắn gọn về sản phẩm. Giới thiệu sơ qua về các tính năng nổi bật và các thông tin cần thiết.</p>
-                <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Thêm vào giỏ hàng</button>
-            </div>
+                <button class="flex items-center bg-green-100 text-green-700 text-sm font-semibold px-4 py-1 rounded-full border border-green-700 hover:bg-green-200 transition">
+                    <i class="fa fa-shopping-bag mr-1"></i> Thêm vào giỏ hàng
+                </button>
+                </div>
         </div>
     </section>
 
@@ -58,18 +65,18 @@
     <!-- Product Same Category -->
     <section class="my-12">
         <div class="container mx-auto">
-            <h3 class="text-2xl font-bold text-center text-blue-600 mb-6">Sản phẩm cùng danh mục</h3>
+            <h3 class="text-2xl font-bold text-center text-gray-600 mb-6">Sản phẩm khác</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <!-- Product Card -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 text-center">
-                    <img src="path_to_image.jpg" alt="Product 1" class="h-40 w-full object-cover rounded-md mb-4">
+                    <img src="./img/fruite-item-1.jpg" alt="Product 1" class="h-40 w-full object-cover rounded-md mb-4">
                     <h4 class="font-semibold text-lg mb-2">Sản phẩm 1</h4>
                     <p class="text-blue-600 font-bold mb-2">500,000₫</p>
                     <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Xem chi tiết</button>
                 </div>
                 <!-- Repeat Product Card for each item -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 text-center">
-                    <img src="path_to_image.jpg" alt="Product 2" class="h-40 w-full object-cover rounded-md mb-4">
+                    <img src="./img/fruite-item-1.jpg" alt="Product 2" class="h-40 w-full object-cover rounded-md mb-4">
                     <h4 class="font-semibold text-lg mb-2">Sản phẩm 2</h4>
                     <p class="text-blue-600 font-bold mb-2">600,000₫</p>
                     <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Xem chi tiết</button>
